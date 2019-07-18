@@ -10,9 +10,8 @@ import {
     Input
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addItem} from '../actions/itemActions';
+import { addItem } from '../actions/itemActions';
 import itemReducer from '../reducers/itemReducer';
-import uuid from 'uuid';
 
 class ItemModal extends Component {
     state = {
@@ -34,7 +33,6 @@ class ItemModal extends Component {
         e.preventDefault();
 
         const newItem = {
-            id: uuid(),
             name: this.state.name
         }
 
