@@ -1,26 +1,27 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const path = require('path');
-
-const items = require('./routes/api/items');
+const config = require('config');
 
 const app = express();
 
 // Bodyparser Middleware
-app.use(bodyParser.json());
+app.use(express.json());
 
 // DB Config
-const db = require('./config/keys').mongoURI;
+const db = config.get('mongoURI'); // delete keys.js
 
 // Connect to Mongo
 mongoose
-    .connect(db,{ useNewUrlParser: true })
+    .connect(db,{ useNewUrlParser: true,
+    useCreateIndex: true }) //useCreateIndex gets rid of Mongoose deprecation warning
     .then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log(err));
 
 // Use Routes
-app.use('/api/items', items);
+app.use('/api/items', require('./routes/api/items'));
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/auth', require('./routes/api/auth'));
 
 // Serve static asssets (build folder), if we're in production
 if(process.env.NODE_ENV == 'production'){
