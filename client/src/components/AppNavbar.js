@@ -1,3 +1,4 @@
+// This class constructs the AppNavBar by using reactstrap module
 import React, { Component, Fragment } from "react";
 import {
   Collapse,
@@ -16,6 +17,7 @@ import LoginModal from "./auth/LoginModal";
 import Logout from "./auth/Logout";
 
 class AppNavbar extends Component {
+  // This state refers to if the hamburger menu is open or not.
   state = {
     isOpen: false
   };

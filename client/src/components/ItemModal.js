@@ -1,3 +1,4 @@
+// This class uses reactstrap to construct the Item Modal component which has an addItem action and connects to redux using the react-redux package.
 import React, { Component } from "react";
 import {
   Button,
@@ -15,7 +16,7 @@ import PropTypes from "prop-types";
 
 class ItemModal extends Component {
   state = {
-    modal: false,
+    modal: false, // Represents if the modal is open or not
     name: ""
   };
 
@@ -29,18 +30,21 @@ class ItemModal extends Component {
     });
   };
 
+  // Input function
+  // e = event
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  // Function when submit is clicked to call addItem action
   onSubmit = e => {
-    e.preventDefault();
+    e.preventDefault(); // prevent form from naturally submitting
 
     const newItem = {
       name: this.state.name
     };
 
-    // Add item via addItem action
+    // Add item via addItem action brought in from above
     this.props.addItem(newItem);
 
     // Close modal

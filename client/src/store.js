@@ -1,19 +1,12 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from './reducers';
+// Store holds the whole state tree of the application, see documentation for redux store
+// The only way to change the state inside is to dispatch an action on it (e.g. addItem, removeItem, etc. )
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk"; // Middleware
+import rootReducer from "./reducers"; //index.js, don't have to specify because it's called index.js
 
 const initialState = {};
 
 const middleWare = [thunk];
-
-// 7/17: LEFT OFF TRYING TO CHANGE THIS CODE FROM YOUTUBE COMMENT. (TRY NEXT: FOLLOW REDUX EXTENSION PAGE)
-// https://extension.remotedev.io/#usage
-
-// const store = createStore(rootReducer, initialState, compose(
-//     applyMiddleware(...middleware),
-//     //visit page for instructions, need this line to use redux/redux extension
-//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 
-// ));
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
