@@ -1,14 +1,14 @@
+// This file contains all the components being used in the FE
 import React, { Component } from "react";
 import AppNavbar from "./components/AppNavbar";
 import ShoppingList from "./components/ShoppingList";
 import ItemModal from "./components/ItemModal";
 import { Container } from "reactstrap";
 
-//combines react + redux
-import { Provider } from "react-redux";
+import { Provider } from "react-redux"; //combines react + redux
 import store from "./store";
 import { loadUser } from "./actions/authActions";
-
+// Bring in boostrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 

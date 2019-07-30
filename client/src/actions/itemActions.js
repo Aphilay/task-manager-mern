@@ -1,9 +1,12 @@
+// This file contains the actions that make requests to the backend API
+// Each request dispatches an action.type to the reducer e.g. itemReducer
 import axios from "axios";
 import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from "./types";
 import { tokenConfig } from "./authActions";
 import { returnErrors } from "./errorActions";
 
 export const getItems = () => dispatch => {
+  // dispatch: thunk middleware allows us to make async requests
   dispatch(setItemsLoading());
   axios
     .get("api/items")
