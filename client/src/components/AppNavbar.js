@@ -10,7 +10,7 @@ import {
   NavLink,
   Container
 } from "reactstrap";
-import { connect } from "react-redux";
+import { connect } from "react-redux"; // connect to redux
 import PropTypes from "prop-types";
 import RegisterModal from "./auth/RegisterModal";
 import LoginModal from "./auth/LoginModal";
@@ -22,6 +22,7 @@ class AppNavbar extends Component {
     isOpen: false
   };
 
+  // Needed for mapStateToProps, which uses connect.
   static propTypes = {
     auth: PropTypes.object.isRequired
   };
@@ -76,7 +77,7 @@ class AppNavbar extends Component {
     );
   }
 }
-
+// takes in state, we want auth state, create propTypes above
 const mapStateToProps = state => ({
   auth: state.auth
 });

@@ -1,3 +1,4 @@
+// This file contains the states of users
 import {
   USER_LOADED,
   USER_LOADING,
@@ -16,6 +17,7 @@ const initialState = {
   user: null
 };
 
+// Reducer function
 export default function(state = initialState, action) {
   switch (action.type) {
     case USER_LOADING:

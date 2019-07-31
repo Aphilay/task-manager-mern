@@ -1,3 +1,4 @@
+// This file contains the states of errors
 import { GET_ERRORS, CLEAR_ERRORS } from "../actions/types";
 
 const initialState = {
@@ -6,6 +7,7 @@ const initialState = {
   id: null
 };
 
+// Reducer function
 export default function(state = initialState, action) {
   switch (action.type) {
     case GET_ERRORS:

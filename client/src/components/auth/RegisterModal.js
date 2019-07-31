@@ -1,3 +1,4 @@
+// This file uses reactstrap to construct the registration modal.
 import React, { Component } from "react";
 import {
   Button,
@@ -32,6 +33,9 @@ class RegisterModal extends Component {
     clearErrors: PropTypes.func.isRequired
   };
 
+  // To display error in modal, lifecycle method cdupdate.
+  // Takes prevProps or nextProps.
+  // We have access to error from mapStateToProps below.
   componentDidUpdate(prevProps) {
     const { error, isAuthenticated } = this.props;
     if (error !== prevProps.error) {
@@ -132,7 +136,7 @@ class RegisterModal extends Component {
     );
   }
 }
-
+// States to bring in which come from reducer
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
   error: state.error
