@@ -5,7 +5,7 @@ const config = require("config");
 
 const app = express(); //Init express into a variable 'app'
 
-// Bodyparser Middleware is included in express
+// Bodyparser Middleware is included in express, removed body-parser middleware
 app.use(express.json());
 
 // DB Config to get the mongoURI constant

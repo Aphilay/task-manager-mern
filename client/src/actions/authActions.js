@@ -1,3 +1,5 @@
+// This file makes axios calls on the front end which deals with authenticating a user.
+// This includes dispatching actions and sending token
 import axios from "axios";
 import { returnErrors } from "./errorActions";
 import {
@@ -12,8 +14,9 @@ import {
 } from "./types";
 
 // Check token & load user
+// calling dispatch and getState
 export const loadUser = () => (dispatch, getState) => {
-  // User loading
+  // User loading, dispatches to authReducer
   dispatch({ type: USER_LOADING });
 
   axios
