@@ -1,6 +1,7 @@
 This web application is a shopping list built on the MERN stack. It uses Redux for state management and Reactstrap module for boostrap components to be used as react components. React Transition Group which allows a fade effect when items are deleted/added. JsonWebToken for authentication.
 
 # Quickstart
+Add your own MongoDB URI in config/default.json
 
 <h3>In project root directory</h3>
 npm i
