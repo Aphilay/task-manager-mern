@@ -2,7 +2,7 @@ This web application is a shopping list built on the MERN stack. It uses Redux f
 
 # Quickstart
 
-# In project root directory:
+<h1>In project root directory</h1>
 npm i
 
 # In client directory:
