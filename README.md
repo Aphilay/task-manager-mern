@@ -2,13 +2,13 @@ This web application is a shopping list built on the MERN stack. It uses Redux f
 
 # Quickstart
 
-<h1>In project root directory</h1>
+<h3>In project root directory</h3>
 npm i
 
-# In client directory:
+<h3>In client directory</h3>
 npm i
 
-# To run on local server
+<h3>To run on local server</h3>
 npm run dev
 <br>
 Note: concurrently is used to run the front end and back end at the same time. See package.json to see scripts.
