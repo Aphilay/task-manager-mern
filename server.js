@@ -5,10 +5,10 @@ const config = require("config");
 
 const app = express(); //Init express into a variable 'app'
 
-// Bodyparser Middleware is included in express, removed body-parser middleware
+// Bodyparser Middleware is included in express
 app.use(express.json());
 
-// DB Config to get the mongoURI constant
+// DB variable that retrieves mongo URI
 const db = config.get("mongoURI");
 
 // Connect to Mongo using mongoose
@@ -23,7 +23,8 @@ app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
 
 // When in production, look at the client/build folder.
-// When npm run build, everything goes into client/build folder and looks at the index.html file, because we do not have a Dev Server when in production
+// When npm run build, everything goes into client/build folder and looks at the index.html file
+// because we do not have a Dev Server when in production
 if (process.env.NODE_ENV == "production") {
   // Set static folder
   app.use(express.static("client/build"));
