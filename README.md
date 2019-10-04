@@ -8,7 +8,7 @@ Add your own MongoDB URI in config/default.json
 npm install
 ```
 
-###in client directory
+### in client directory
 ```
 npm install
 ```
